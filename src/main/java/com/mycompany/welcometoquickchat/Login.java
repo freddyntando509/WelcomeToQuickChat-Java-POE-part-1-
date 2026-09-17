@@ -47,6 +47,35 @@ public class Login {
         }
         return username.contains("_") && username.length() <= 5;
     }
+    // Checks if the password meets the complexity rules:
+    // at least 8 characters, a capital letter, a number, and a special character
+    public boolean checkPasswordComplexity(String password) {
+        if (password == null || password.length() < 8) {
+            return false;
+        }
+ 
+        boolean hasCapitalLetter = false;
+        boolean hasNumber = false;
+        boolean hasSpecialCharacter = false;
+ 
+        for (int i = 0; i < password.length(); i++) {
+            char currentChar = password.charAt(i);
+ 
+            if (Character.isUpperCase(currentChar)) {
+                hasCapitalLetter = true;
+            } else if (Character.isDigit(currentChar)) {
+                hasNumber = true;
+            } else if (!Character.isLetterOrDigit(currentChar)) {
+                hasSpecialCharacter = true;
+            }
+        }
+ 
+        return hasCapitalLetter && hasNumber && hasSpecialCharacter;
+    }
+    
+    
+ 
+
 
 
 
