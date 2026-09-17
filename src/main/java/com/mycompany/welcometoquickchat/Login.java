@@ -19,6 +19,29 @@ public class Login {
      // Remembers registration status and last login result
     public boolean isRegistered;
     public boolean loginSuccessful;
+    
+    // Setters to store the user's details before registerUser() runs
+    public void setUsername(String username) {
+        this.username = username;
+    }
+ 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+ 
+    public void setCellNumber(String cellNumber) {
+        this.cellNumber = cellNumber;
+    }
+ 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+ 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
+
 
  
 
