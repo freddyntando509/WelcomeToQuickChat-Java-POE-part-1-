@@ -40,7 +40,14 @@ public class Login {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
+     // Checks if the username has an underscore and is 5 characters or less
+    public boolean checkUserName(String username) {
+        if (username == null) {
+            return false;
+        }
+        return username.contains("_") && username.length() <= 5;
+    }
+
 
 
  
