@@ -72,7 +72,20 @@ public class Login {
  
         return hasCapitalLetter && hasNumber && hasSpecialCharacter;
     }
-    
+    // Checks if the cell number starts with +27 and has the correct number
+    // of digits (regex based - see reference below).
+    // Regex pattern from:
+    // Baeldung (2024) Validate Phone Numbers With Java Regex.
+    // Available at: https://www.baeldung.com/java-regex-validate-phone-numbers
+    // (Accessed: 8 September 2026).
+    public boolean checkCellPhoneNumber(String cellNumber) {
+        if (cellNumber == null) {
+            return false;
+        }
+ 
+        String cellNumberRegex = "^\\+27[0-9]{1,10}$";
+        return cellNumber.matches(cellNumberRegex);
+    }
     
  
 
