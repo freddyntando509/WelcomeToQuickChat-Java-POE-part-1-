@@ -86,13 +86,63 @@ public class Login {
         String cellNumberRegex = "^\\+27[0-9]{1,10}$";
         return cellNumber.matches(cellNumberRegex);
     }
-    
+    // Registers the user by checking the username, password, and cell number,
+    // and returns a message reporting the result of each check
+    public String registerUser() {
+        boolean validUsername = checkUserName(username);
+        boolean validPassword = checkPasswordComplexity(password);
+        boolean validCellNumber = checkCellPhoneNumber(cellNumber);
  
-
-
-
-
+        // Build up the message piece by piece using normal string concatenation
+        String message = "";
  
-
-     
+        if (validUsername) {
+            message = message + "Username successfully captured.";
+        } else {
+            message = message + "Username is not correctly formatted; please ensure that "
+                    + "your username contains an underscore and is no more than "
+                    + "five characters in length.";
+        }
+        message = message + "\n";
+ 
+        if (validPassword) {
+            message = message + "Password successfully captured.";
+        } else {
+            message = message + "Password is not correctly formatted; please ensure that "
+                    + "the password contains at least eight characters, a capital "
+                    + "letter, a number, and a special character.";
+        }
+        message = message + "\n";
+ 
+        if (validCellNumber) {
+            message = message + "Cell number successfully captured.";
+        } else {
+            message = message + "Cell number is incorrectly formatted or does not contain "
+                    + "an international code; please correct the number and try again.";
+        }
+ 
+        if (validUsername && validPassword && validCellNumber) {
+            isRegistered = true;
+        }
+ 
+        return message;
     }
+    
+     // Checks if the entered username and password match the stored details
+    public boolean loginUser(String enteredUsername, String enteredPassword) {
+        loginSuccessful = isRegistered
+                && username != null && username.equals(enteredUsername)
+                && password != null && password.equals(enteredPassword);
+ 
+        return loginSuccessful;
+    }
+    
+    // Returns a welcome message if login succeeded, or an error message if it failed
+    public String returnLoginStatus() {
+        if (loginSuccessful) {
+            return "Welcome " + firstName + "," + lastName + " it is great to see you.";
+        } else {
+            return "Username or password incorrect, please try again.";
+        }
+    }  
+}
