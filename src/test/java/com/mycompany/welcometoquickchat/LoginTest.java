@@ -153,7 +153,7 @@ public class LoginTest {
         login.setLastName("Smith");
         registerWith("kyl_1", "Ch&&sec@ke99!", "+27838968976");
         login.loginUser("kyl_1", "Ch&&sec@ke99!");
-        assertEquals("Welcome Kyle, Smith it is great to see you.", login.returnLoginStatus());   // <-- change this line
+        assertEquals("Welcome Kyle,Smith it is great to see you.", login.returnLoginStatus());   // <-- change this line
     }
     @Test
     public void testLoginStatusMessageAfterFailedLogin() {

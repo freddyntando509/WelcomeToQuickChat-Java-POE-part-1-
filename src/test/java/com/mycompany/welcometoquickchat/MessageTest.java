@@ -24,16 +24,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MessageTest {
  
     // Test data 1 (to be sent) and test data 2 (to be disregarded)
-    private static final String RECIPIENT_1 = "+27718693002";
-    private static final String MESSAGE_1 = "Hi Mike, can you join us for dinner tonight?";
-    private static final String RECIPIENT_2 = "08575975889";
-    private static final String MESSAGE_2 = "Hi Keegan, did you receive the payment?";
+    public static final String RECIPIENT_1 = "+27718693002";
+    public static final String MESSAGE_1 = "Hi Mike, can you join us for dinner tonight?";
+    public static final String RECIPIENT_2 = "08575975889";
+    public static final String MESSAGE_2 = "Hi Keegan, did you receive the payment?";
  
     // Stored messages in the tests go into their own file
-    private static final String TEST_FILE = "testStoredMessages.json";
+    public static final String TEST_FILE = "testStoredMessages.json";
  
-    private Message message1;
-    private Message message2;
+    public Message message1;
+    public Message message2;
  
     // Runs before every test. It clears the sent messages and creates two fresh
     // messages from the test data, so no test is affected by another test.
