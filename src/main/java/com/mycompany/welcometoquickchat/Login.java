@@ -127,7 +127,10 @@ public class Login {
  
         return message;
     }
-    
+        // Lets other classes check if the user has registered successfully
+    public boolean isRegistered() {
+        return isRegistered;
+    }
      // Checks if the entered username and password match the stored details
     public boolean loginUser(String enteredUsername, String enteredPassword) {
         loginSuccessful = isRegistered
