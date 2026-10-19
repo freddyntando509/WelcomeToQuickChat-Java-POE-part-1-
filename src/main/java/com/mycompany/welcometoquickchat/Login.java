@@ -140,7 +140,7 @@ public class Login {
         return loginSuccessful;
     }
     
-    // Returns a welcome message if login succeeded, or an error message if it failed
+    // Returns a welcome message if login succeeded, or an error message if it failed.
     public String returnLoginStatus() {
         if (loginSuccessful) {
             return "Welcome " + firstName + "," + lastName + " it is great to see you.";
