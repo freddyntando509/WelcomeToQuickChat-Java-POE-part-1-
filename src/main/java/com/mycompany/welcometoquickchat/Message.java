@@ -234,7 +234,7 @@ public class Message {
     // JSON writing with Gson adapted from:
     // Mkyong (n.d.) Gson - How to convert Java object to / from JSON.
     // Available at: https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
-    // (Accessed: 11 October 2026).
+    // (Accessed: 18 October 2026).
     public boolean storeMessage() {
         // Step 1: start with an empty list of stored messages
         JsonArray storedMessages = new JsonArray();
