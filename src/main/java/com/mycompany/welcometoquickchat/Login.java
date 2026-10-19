@@ -131,7 +131,7 @@ public class Login {
     public boolean isRegistered() {
         return isRegistered;
     }
-     // Checks if the entered username and password match the stored details
+     // Checks if the entered username and password match the stored details.
     public boolean loginUser(String enteredUsername, String enteredPassword) {
         loginSuccessful = isRegistered
                 && username != null && username.equals(enteredUsername)
